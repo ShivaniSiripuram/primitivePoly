@@ -1,0 +1,92 @@
+from scipy.stats import norm
+import itertools
+import math
+
+y=norm.ppf(0.5)
+print(y)
+F=GF(2)
+l=F(1)
+o=F(0)
+R.<x>=PolynomialRing(F)
+def geffe(s1,s2,s3,n):
+	return [(s1[i]*s2[i]+s2[i]*s3[i]+s3[i]) for i in range(n)]
+	
+def generate_primitive_poly(degree):
+    primitive=[]
+    for poly in R.polynomials(degree):
+        if poly.is_primitive() and poly.is_irreducible():
+            primitive.append(poly)
+    return primitive
+
+
+def calN(pf,pn,p):
+    x=((norm.ppf(1-pf)-2*(norm.ppf(pn)*math.sqrt(p*(1-p)))))/1-2*p
+    return int(x*x)
+    
+def calT(pn,p,n):
+    a=math.sqrt((p*(1-p))/n)
+    t=(1.0-(2*p))+((2*norm.ppf(pn))*a)
+    return t
+    
+def calC(seq1,seq2,n):
+    x=0
+    for i in range(n):
+        if seq1[i]!=seq2[i]:
+            x+=1
+    result=1.0-(2.0/n)*x
+    return result
+    #pf=0.000000000001  for l=4    pf=0.0000000000000001  l=6
+    #pn=0.13 for l=4 when pf=0.000001
+pn=0.7
+pf=0.000000001 
+p=0.25
+l1=4
+l2=5
+l3=6
+N=calN(pf,pn,p)
+print("N value is : ",N)
+t=calT(pn,p,N)
+print("T value",t)
+s1=lfsr_sequence([l,l,o,o],[l,o,o,l],N)
+s2=lfsr_sequence([l,o,l,o,o],[l,o,l,o,l],N)
+s3=lfsr_sequence([l,l,o,o,o,o],[l,o,l,o,l,o],N)
+keystream=geffe(s1,s2,s3,N)
+print("geffe generator keystream : ",keystream)
+
+states1=list(state for state in itertools.product([0,1],repeat=l1) if any(state))
+
+
+#print(states1)
+
+primitive_polynomials_of_lfsr1=generate_primitive_poly(l1)
+coffList=[]
+for poly in primitive_polynomials_of_lfsr1:
+    lis=poly.list()
+    coffList.append(lis[:-1])
+ 
+#print("poly : ",coffList)
+
+all_seq=[]
+all_combinations=[]
+for state in states1:
+    for poly in coffList:
+        temp = []
+        temp.append(poly)
+        temp.append(state)
+        all_combinations.append(temp)
+        all_seq.append(list(lfsr_sequence(list(poly), list(state), N)))
+"""
+print("all combinations : ",all_combinations)
+print("len : ",len(all_combinations))
+"""
+c_values=[]
+for seq in all_seq:
+    c_values.append(calC(seq,keystream,N))
+    
+initial_states=[] 
+for i in range(len(c_values)):
+    if c_values[i]>t:
+        initial_states.append(all_combinations[i])
+        print("C_value and its index",c_values[i],i)
+
+print(initial_states)
