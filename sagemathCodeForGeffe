@@ -90,3 +90,134 @@ for i in range(len(c_values)):
         print("C_value and its index",c_values[i],i)
 
 print(initial_states)
+
+
+
+ #pn=0.13 for l=4 when pf=0.000001
+ sage myscript.sage
+0.0
+N value is :  27
+T value 0.3122681451601999
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1]
+C_value and its index 0.629629629629630 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+
+
+
+pn=0.5
+pf=0.000001 for l=4 
+sage myscript.sage
+0.0
+N value is :  14
+T value 0.5
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0]
+C_value and its index 0.714285714285714 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$
+
+
+
+pn=0.5
+pf=0.00001 l=4
+sage myscript.sage
+0.0
+N value is :  14
+T value 0.5
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0]
+C_value and its index 0.714285714285714 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+
+pn=0.4
+pf=0.000001 l=4
+sage myscript.sage
+0.0
+N value is :  20
+T value 0.45093954443725776
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1]
+C_value and its index 0.700000000000000 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+
+pn=0.3
+pf=0.000001  l=4
+:~$ sage myscript.sage
+0.0
+N value is :  22
+T value 0.4031761385306611
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1]
+C_value and its index 0.727272727272727 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+pn=0.2
+pf=0.000001 l=4
+ sage myscript.sage
+0.0
+N value is :  24
+T value 0.3512209796375013
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1]
+C_value and its index 0.750000000000000 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ sage myscript.sage
+
+pn=0.2
+pf=0.0000001 l=4
+sage myscript.sage
+0.0
+N value is :  29
+T value 0.36465309888512465
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0]
+C_value and its index 0.655172413793103 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+
+pn=0.1
+pf=0.00000001  l=4
+:~$ sage myscript.sage
+0.0
+N value is :  38
+T value 0.319957548035093
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1]
+C_value and its index 0.578947368421053 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+pn=0.6
+pf=0.00000001 l=4
+ sage myscript.sage
+0.0
+N value is :  23
+T value 0.5457491107067174
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0]
+C_value and its index 0.739130434782609 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+
+pn=0.6
+pf=0.000000001  l=4
+$ sage myscript.sage
+0.0
+N value is :  27
+T value 0.5422245171893
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1]
+C_value and its index 0.629629629629630 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
+
+pn=0.7
+pf=0.000000001 l=4 
+:~$ sage myscript.sage
+0.0
+N value is :  25
+T value 0.5908288331525495
+geffe generator keystream :  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0]
+C_value and its index 0.680000000000000 16
+[[[1, 1, 0, 0], (1, 0, 0, 1)]]
+ccs2@user:~$ 
+
